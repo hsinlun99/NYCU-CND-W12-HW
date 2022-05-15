@@ -10,4 +10,10 @@ describe('Transaction', () => {
     const transaction = new Transaction();
     expect(transaction.price([1, 1, 1])).toBe(8*3);
   });
+
+  // testcase2: simple discount 1
+  test('2 different books', () => {
+    const transaction = new Transaction();
+    expect(transaction.price([0, 1])).toBe(8*2*0.95);
+  });
 });
