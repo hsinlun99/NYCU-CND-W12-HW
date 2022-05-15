@@ -24,8 +24,25 @@ describe('Transaction', () => {
         transaction.price([0, 1, 2, 4]) + 
         transaction.price([0, 1, 2, 3, 4])
       ).toBe(
-        8*2*0.95 + 8*3*0.9 + 8*4*0.8 + 8*5*0.75
+        8*2*0.95 + 
+        8*3*0.9 + 
+        8*4*0.8 + 
+        8*5*0.75
       );
   });
-
+  
+  // testcase 3: several discount
+  test('several discount', () => {
+    expect(
+        transaction.price([0, 0, 1]) + 
+        transaction.price([0, 0, 1, 1]) + 
+        transaction.price([0, 0, 1, 2, 2, 3]) + 
+        transaction.price([0, 1, 1, 2, 3, 4])
+      ).toBe(
+        (8 + 8*2*0.95) + 
+        (8*2*0.8*2) +
+        (8*4*0.8 + 8*2*0.95) +
+        (8 + 8*5*0.75)
+      );
+  });
 });
