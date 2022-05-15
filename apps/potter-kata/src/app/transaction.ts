@@ -53,7 +53,7 @@ export class Transaction {
       }
     }else{
       let copiesOfAEpisode = Math.max(...seriesCount);
-      bill = 8*copiesOfAEpisode;
+      bill += 8*copiesOfAEpisode;
     }
       
     return bill;
