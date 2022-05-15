@@ -1,6 +1,8 @@
 export class Transaction {
   price(books: number[]){
     let bill = 0;
+
+    
     books.forEach(book => {
       switch (book) {
         case 0:
