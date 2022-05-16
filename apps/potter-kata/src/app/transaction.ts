@@ -88,7 +88,6 @@ export class Transaction {
       }
 
       let discount = 0;
-      console.log("normal discount")
       switch (isDiscountable) {
         case 1:
           discount = 1;
